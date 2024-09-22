@@ -1,0 +1,508 @@
+2024-09-21 16:06:32,789 - ==> Logging on master GPU: 0
+2024-09-21 16:06:32,789 - ==> Running Trainer: InvADTrainer
+2024-09-21 16:06:32,789 - ==> Using GPU: [0] for Training
+2024-09-21 16:06:32,789 - ==> Building model
+2024-09-21 16:06:33,999 - Loading pretrained weights from url (https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights/wide_resnet50_racm-8234f177.pth)
+2024-09-21 16:06:34,909 - ==> Load checkpoint: runs/InvADTrainer_configs_invad_invad_mvtec_20240920-230455/net.pth
+2024-09-21 16:06:36,278 - 
+------------------------------------ InvAD ------------------------------------
+| module                                   | #parameters or shape    | #flops       |
+|:-----------------------------------------|:------------------------|:-------------|
+| model                                    | 95.631M                 | 45.394G      |
+|  net_encoder                             |  24.863M                |  12.034G     |
+|   net_encoder.conv1                      |   9.408K                |   0.154G     |
+|    net_encoder.conv1.weight              |    (64, 3, 7, 7)        |              |
+|   net_encoder.bn1                        |   0.128K                |   2.097M     |
+|    net_encoder.bn1.weight                |    (64,)                |              |
+|    net_encoder.bn1.bias                  |    (64,)                |              |
+|   net_encoder.layer1                     |   0.634M                |   2.598G     |
+|    net_encoder.layer1.0                  |    0.206M               |    0.845G    |
+|     net_encoder.layer1.0.conv1           |     8.192K              |     33.554M  |
+|      net_encoder.layer1.0.conv1.weight   |      (128, 64, 1, 1)    |              |
+|     net_encoder.layer1.0.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.0.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.0.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.0.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.0.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.0.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.0.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.0.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.0.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.0.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.0.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.0.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.0.bn3.bias       |      (256,)             |              |
+|     net_encoder.layer1.0.downsample      |     16.896K             |     69.206M  |
+|      net_encoder.layer1.0.downsample.0   |      16.384K            |      67.109M |
+|      net_encoder.layer1.0.downsample.1   |      0.512K             |      2.097M  |
+|    net_encoder.layer1.1                  |    0.214M               |    0.877G    |
+|     net_encoder.layer1.1.conv1           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.1.conv1.weight   |      (128, 256, 1, 1)   |              |
+|     net_encoder.layer1.1.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.1.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.1.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.1.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.1.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.1.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.1.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.1.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.1.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.1.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.1.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.1.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.1.bn3.bias       |      (256,)             |              |
+|    net_encoder.layer1.2                  |    0.214M               |    0.877G    |
+|     net_encoder.layer1.2.conv1           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.2.conv1.weight   |      (128, 256, 1, 1)   |              |
+|     net_encoder.layer1.2.bn1             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.2.bn1.weight     |      (128,)             |              |
+|      net_encoder.layer1.2.bn1.bias       |      (128,)             |              |
+|     net_encoder.layer1.2.conv2           |     0.147M              |     0.604G   |
+|      net_encoder.layer1.2.conv2.weight   |      (128, 128, 3, 3)   |              |
+|     net_encoder.layer1.2.bn2             |     0.256K              |     1.049M   |
+|      net_encoder.layer1.2.bn2.weight     |      (128,)             |              |
+|      net_encoder.layer1.2.bn2.bias       |      (128,)             |              |
+|     net_encoder.layer1.2.conv3           |     32.768K             |     0.134G   |
+|      net_encoder.layer1.2.conv3.weight   |      (256, 128, 1, 1)   |              |
+|     net_encoder.layer1.2.bn3             |     0.512K              |     2.097M   |
+|      net_encoder.layer1.2.bn3.weight     |      (256,)             |              |
+|      net_encoder.layer1.2.bn3.bias       |      (256,)             |              |
+|   net_encoder.layer2                     |   3.483M                |   3.769G     |
+|    net_encoder.layer2.0                  |    0.921M               |    1.146G    |
+|     net_encoder.layer2.0.conv1           |     65.536K             |     0.268G   |
+|      net_encoder.layer2.0.conv1.weight   |      (256, 256, 1, 1)   |              |
+|     net_encoder.layer2.0.bn1             |     0.512K              |     2.097M   |
+|      net_encoder.layer2.0.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.0.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.0.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.0.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.0.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.0.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.0.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.0.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.0.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.0.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.0.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.0.bn3.bias       |      (512,)             |              |
+|     net_encoder.layer2.0.downsample      |     0.132M              |     0.135G   |
+|      net_encoder.layer2.0.downsample.0   |      0.131M             |      0.134G  |
+|      net_encoder.layer2.0.downsample.1   |      1.024K             |      1.049M  |
+|    net_encoder.layer2.1                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.1.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.1.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.1.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.1.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.1.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.1.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.1.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.1.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.1.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.1.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.1.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.1.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.1.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.1.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.1.bn3.bias       |      (512,)             |              |
+|    net_encoder.layer2.2                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.2.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.2.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.2.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.2.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.2.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.2.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.2.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.2.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.2.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.2.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.2.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.2.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.2.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.2.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.2.bn3.bias       |      (512,)             |              |
+|    net_encoder.layer2.3                  |    0.854M               |    0.875G    |
+|     net_encoder.layer2.3.conv1           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.3.conv1.weight   |      (256, 512, 1, 1)   |              |
+|     net_encoder.layer2.3.bn1             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.3.bn1.weight     |      (256,)             |              |
+|      net_encoder.layer2.3.bn1.bias       |      (256,)             |              |
+|     net_encoder.layer2.3.conv2           |     0.59M               |     0.604G   |
+|      net_encoder.layer2.3.conv2.weight   |      (256, 256, 3, 3)   |              |
+|     net_encoder.layer2.3.bn2             |     0.512K              |     0.524M   |
+|      net_encoder.layer2.3.bn2.weight     |      (256,)             |              |
+|      net_encoder.layer2.3.bn2.bias       |      (256,)             |              |
+|     net_encoder.layer2.3.conv3           |     0.131M              |     0.134G   |
+|      net_encoder.layer2.3.conv3.weight   |      (512, 256, 1, 1)   |              |
+|     net_encoder.layer2.3.bn3             |     1.024K              |     1.049M   |
+|      net_encoder.layer2.3.bn3.weight     |      (512,)             |              |
+|      net_encoder.layer2.3.bn3.bias       |      (512,)             |              |
+|   net_encoder.layer3                     |   20.736M               |   5.511G     |
+|    net_encoder.layer3.0                  |    3.676M               |    1.143G    |
+|     net_encoder.layer3.0.conv1           |     0.262M              |     0.268G   |
+|      net_encoder.layer3.0.conv1.weight   |      (512, 512, 1, 1)   |              |
+|     net_encoder.layer3.0.bn1             |     1.024K              |     1.049M   |
+|      net_encoder.layer3.0.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.0.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.0.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.0.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.0.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.0.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.0.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.0.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.0.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.0.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.0.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.0.bn3.bias       |      (1024,)            |              |
+|     net_encoder.layer3.0.downsample      |     0.526M              |     0.135G   |
+|      net_encoder.layer3.0.downsample.0   |      0.524M             |      0.134G  |
+|      net_encoder.layer3.0.downsample.1   |      2.048K             |      0.524M  |
+|    net_encoder.layer3.1                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.1.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.1.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.1.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.1.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.1.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.1.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.1.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.1.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.1.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.1.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.1.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.1.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.1.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.1.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.1.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.2                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.2.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.2.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.2.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.2.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.2.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.2.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.2.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.2.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.2.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.2.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.2.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.2.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.2.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.2.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.2.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.3                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.3.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.3.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.3.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.3.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.3.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.3.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.3.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.3.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.3.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.3.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.3.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.3.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.3.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.3.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.3.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.4                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.4.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.4.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.4.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.4.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.4.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.4.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.4.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.4.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.4.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.4.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.4.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.4.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.4.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.4.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.4.bn3.bias       |      (1024,)            |              |
+|    net_encoder.layer3.5                  |    3.412M               |    0.873G    |
+|     net_encoder.layer3.5.conv1           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.5.conv1.weight   |      (512, 1024, 1, 1)  |              |
+|     net_encoder.layer3.5.bn1             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.5.bn1.weight     |      (512,)             |              |
+|      net_encoder.layer3.5.bn1.bias       |      (512,)             |              |
+|     net_encoder.layer3.5.conv2           |     2.359M              |     0.604G   |
+|      net_encoder.layer3.5.conv2.weight   |      (512, 512, 3, 3)   |              |
+|     net_encoder.layer3.5.bn2             |     1.024K              |     0.262M   |
+|      net_encoder.layer3.5.bn2.weight     |      (512,)             |              |
+|      net_encoder.layer3.5.bn2.bias       |      (512,)             |              |
+|     net_encoder.layer3.5.conv3           |     0.524M              |     0.134G   |
+|      net_encoder.layer3.5.conv3.weight   |      (1024, 512, 1, 1)  |              |
+|     net_encoder.layer3.5.bn3             |     2.048K              |     0.524M   |
+|      net_encoder.layer3.5.bn3.weight     |      (1024,)            |              |
+|      net_encoder.layer3.5.bn3.bias       |      (1024,)            |              |
+|  net_fuser                               |  3.492M                 |  1.092G      |
+|   net_fuser.downsamples                  |   3.151M                |   0.806G     |
+|    net_fuser.downsamples.0               |    1.049M               |    0.269G    |
+|     net_fuser.downsamples.0.conv         |     1.049M              |     0.268G   |
+|      net_fuser.downsamples.0.conv.weight |      (256, 256, 4, 4)   |              |
+|      net_fuser.downsamples.0.conv.bias   |      (256,)             |              |
+|     net_fuser.downsamples.0.norm         |     0.512K              |     0.131M   |
+|      net_fuser.downsamples.0.norm.weight |      (256,)             |              |
+|      net_fuser.downsamples.0.norm.bias   |      (256,)             |              |
+|    net_fuser.downsamples.1               |    1.05M                |    0.269G    |
+|     net_fuser.downsamples.1.conv         |     1.049M              |     0.268G   |
+|      net_fuser.downsamples.1.conv.weight |      (512, 512, 2, 2)   |              |
+|      net_fuser.downsamples.1.conv.bias   |      (512,)             |              |
+|     net_fuser.downsamples.1.norm         |     1.024K              |     0.262M   |
+|      net_fuser.downsamples.1.norm.weight |      (512,)             |              |
+|      net_fuser.downsamples.1.norm.bias   |      (512,)             |              |
+|    net_fuser.downsamples.2               |    1.052M               |    0.269G    |
+|     net_fuser.downsamples.2.conv         |     1.05M               |     0.268G   |
+|      net_fuser.downsamples.2.conv.weight |      (1024, 1024, 1, 1) |              |
+|      net_fuser.downsamples.2.conv.bias   |      (1024,)            |              |
+|     net_fuser.downsamples.2.norm         |     2.048K              |     0.524M   |
+|      net_fuser.downsamples.2.norm.weight |      (1024,)            |              |
+|      net_fuser.downsamples.2.norm.bias   |      (1024,)            |              |
+|   net_fuser.conv_cat                     |   0.115M                |   29.393M    |
+|    net_fuser.conv_cat.conv               |    0.115M               |    29.36M    |
+|     net_fuser.conv_cat.conv.weight       |     (64, 1792, 1, 1)    |              |
+|    net_fuser.conv_cat.norm               |    0.128K               |    32.768K   |
+|     net_fuser.conv_cat.norm.weight       |     (64,)               |              |
+|     net_fuser.conv_cat.norm.bias         |     (64,)               |              |
+|   net_fuser.conv_bottle.0                |   4.544K                |   1.163M     |
+|    net_fuser.conv_bottle.0.conv1         |    1.024K               |    0.262M    |
+|     net_fuser.conv_bottle.0.conv1.weight |     (16, 64, 1, 1)      |              |
+|    net_fuser.conv_bottle.0.bn1           |    32                   |    8.192K    |
+|     net_fuser.conv_bottle.0.bn1.weight   |     (16,)               |              |
+|     net_fuser.conv_bottle.0.bn1.bias     |     (16,)               |              |
+|    net_fuser.conv_bottle.0.conv2         |    2.304K               |    0.59M     |
+|     net_fuser.conv_bottle.0.conv2.weight |     (16, 16, 3, 3)      |              |
+|    net_fuser.conv_bottle.0.bn2           |    32                   |    8.192K    |
+|     net_fuser.conv_bottle.0.bn2.weight   |     (16,)               |              |
+|     net_fuser.conv_bottle.0.bn2.bias     |     (16,)               |              |
+|    net_fuser.conv_bottle.0.conv3         |    1.024K               |    0.262M    |
+|     net_fuser.conv_bottle.0.conv3.weight |     (64, 16, 1, 1)      |              |
+|    net_fuser.conv_bottle.0.bn3           |    0.128K               |    32.768K   |
+|     net_fuser.conv_bottle.0.bn3.weight   |     (64,)               |              |
+|     net_fuser.conv_bottle.0.bn3.bias     |     (64,)               |              |
+|   net_fuser.convs                        |   0.222M                |   0.255G     |
+|    net_fuser.convs.0                     |    73.856K              |    18.874M   |
+|     net_fuser.convs.0.0                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.0.0.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.0.0.1               |      64                 |      0       |
+|     net_fuser.convs.0.1                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.0.1.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.0.1.1               |      64                 |      0       |
+|    net_fuser.convs.1                     |    73.856K              |    47.186M   |
+|     net_fuser.convs.1.0                  |     36.928K             |     9.437M   |
+|      net_fuser.convs.1.0.0               |      36.864K            |      9.437M  |
+|      net_fuser.convs.1.0.2               |      64                 |      0       |
+|     net_fuser.convs.1.1                  |     36.928K             |     37.749M  |
+|      net_fuser.convs.1.1.0               |      36.864K            |      37.749M |
+|      net_fuser.convs.1.1.1               |      64                 |      0       |
+|    net_fuser.convs.2                     |    73.856K              |    0.189G    |
+|     net_fuser.convs.2.0                  |     36.928K             |     37.749M  |
+|      net_fuser.convs.2.0.0               |      36.864K            |      37.749M |
+|      net_fuser.convs.2.0.2               |      64                 |      0       |
+|     net_fuser.convs.2.1                  |     36.928K             |     0.151G   |
+|      net_fuser.convs.2.1.0               |      36.864K            |      0.151G  |
+|      net_fuser.convs.2.1.1               |      64                 |      0       |
+|  net_decoder                             |  67.277M                |  32.268G     |
+|   net_decoder.input                      |   0.262M                |   0          |
+|    net_decoder.input.input               |    (1, 1024, 16, 16)    |              |
+|   net_decoder.conv1.0                    |   9.438M                |   2.416G     |
+|    net_decoder.conv1.0.0                 |    9.437M               |    2.416G    |
+|     net_decoder.conv1.0.0.weight         |     (1024, 1024, 3, 3)  |              |
+|    net_decoder.conv1.0.1                 |    1.024K               |    0         |
+|     net_decoder.conv1.0.1.bias           |     (1024,)             |              |
+|   net_decoder.convs_latent               |   0.138M                |   0.248G     |
+|    net_decoder.convs_latent.0            |    46.16K               |    11.796M   |
+|     net_decoder.convs_latent.0.0         |     36.928K             |     9.437M   |
+|      net_decoder.convs_latent.0.0.0      |      36.864K            |      9.437M  |
+|      net_decoder.convs_latent.0.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.0.1         |     9.232K              |     2.359M   |
+|      net_decoder.convs_latent.0.1.0      |      9.216K             |      2.359M  |
+|      net_decoder.convs_latent.0.1.1      |      16                 |      0       |
+|    net_decoder.convs_latent.1            |    46.16K               |    47.186M   |
+|     net_decoder.convs_latent.1.0         |     36.928K             |     37.749M  |
+|      net_decoder.convs_latent.1.0.0      |      36.864K            |      37.749M |
+|      net_decoder.convs_latent.1.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.1.1         |     9.232K              |     9.437M   |
+|      net_decoder.convs_latent.1.1.0      |      9.216K             |      9.437M  |
+|      net_decoder.convs_latent.1.1.1      |      16                 |      0       |
+|    net_decoder.convs_latent.2            |    46.16K               |    0.189G    |
+|     net_decoder.convs_latent.2.0         |     36.928K             |     0.151G   |
+|      net_decoder.convs_latent.2.0.0      |      36.864K            |      0.151G  |
+|      net_decoder.convs_latent.2.0.1      |      64                 |      0       |
+|     net_decoder.convs_latent.2.1         |     9.232K              |     37.749M  |
+|      net_decoder.convs_latent.2.1.0      |      9.216K             |      37.749M |
+|      net_decoder.convs_latent.2.1.1      |      16                 |      0       |
+|   net_decoder.convs                      |   57.438M               |   29.604G    |
+|    net_decoder.convs.0                   |    41.038M              |    10.507G   |
+|     net_decoder.convs.0.0                |     20.519M             |     5.253G   |
+|      net_decoder.convs.0.0.conv1         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.0.conv2         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.0.skip.0        |      1.049M             |      0.268G  |
+|     net_decoder.convs.0.1                |     20.519M             |     5.253G   |
+|      net_decoder.convs.0.1.conv1         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.1.conv2         |      9.735M             |      2.492G  |
+|      net_decoder.convs.0.1.skip.0        |      1.049M             |      0.268G  |
+|    net_decoder.convs.1                   |    13.03M               |    9.319G    |
+|     net_decoder.convs.1.0                |     7.752M              |     3.912G   |
+|      net_decoder.convs.1.0.conv1         |      4.719M             |      1.209G  |
+|      net_decoder.convs.1.0.conv2         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.0.skip.0        |      0.524M             |      0.134G  |
+|     net_decoder.convs.1.1                |     5.279M              |     5.406G   |
+|      net_decoder.convs.1.1.conv1         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.1.conv2         |      2.508M             |      2.569G  |
+|      net_decoder.convs.1.1.skip.0        |      0.262M             |      0.268G  |
+|    net_decoder.convs.2                   |    3.369M               |    9.779G    |
+|     net_decoder.convs.2.0                |     1.975M              |     4.066G   |
+|      net_decoder.convs.2.0.conv1         |      1.18M              |      1.21G   |
+|      net_decoder.convs.2.0.conv2         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.0.skip.0        |      0.131M             |      0.134G  |
+|     net_decoder.convs.2.1                |     1.394M              |     5.713G   |
+|      net_decoder.convs.2.1.conv1         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.1.conv2         |      0.664M             |      2.722G  |
+|      net_decoder.convs.2.1.skip.0        |      65.536K            |      0.268G  |
+-------------------------------------------------------------------------------
+2024-09-21 16:06:36,283 - ==> Creating optimizer
+2024-09-21 16:06:36,284 - ==> Loading dataset: DefaultAD
+2024-09-21 16:06:36,296 - ==> ********** cfg ********** 
+fvcore_is                            : True                                
+fvcore_b                             : 1                                   
+fvcore_c                             : 3                                   
+epoch_full                           : 300                                 
+metrics                              : ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px']
+use_adeval                           : True                                
+evaluator.kwargs                     : {'metrics': ['mAUROC_sp_max', 'mAP_sp_max', 'mF1_max_sp_max', 'mAUPRO_px', 'mAUROC_px', 'mAP_px', 'mF1_max_px', 'mF1_px_0.2_0.8_0.1', 'mAcc_px_0.2_0.8_0.1', 'mIoU_px_0.2_0.8_0.1', 'mIoU_max_px'], 'pooling_ks': None, 'max_step_aupro': 100}
+vis                                  : True                                
+vis_dir                              : result                              
+optim.lr                             : 0.004                               
+optim.kwargs                         : {'name': 'adam', 'betas': (0, 0.99)}
+trainer.name                         : InvADTrainer                        
+trainer.checkpoint                   : runs                                
+trainer.logdir_sub                   :                                     
+trainer.resume_dir                   :                                     
+trainer.cuda_deterministic           : False                               
+trainer.epoch_full                   : 300                                 
+trainer.scheduler_kwargs             : {'name': 'step', 'lr_noise': None, 'noise_pct': 0.67, 'noise_std': 1.0, 'noise_seed': 42, 'lr_min': 4e-05, 'warmup_lr': 4e-06, 'warmup_iters': -1, 'cooldown_iters': 0, 'warmup_epochs': 0, 'cooldown_epochs': 0, 'use_iters': True, 'patience_iters': 0, 'patience_epochs': 0, 'decay_iters': 0, 'decay_epochs': 240, 'cycle_decay': 0.1, 'decay_rate': 0.1}
+trainer.mixup_kwargs                 : {'mixup_alpha': 0.8, 'cutmix_alpha': 1.0, 'cutmix_minmax': None, 'prob': 0.0, 'switch_prob': 0.5, 'mode': 'batch', 'correct_lam': True, 'label_smoothing': 0.1}
+trainer.test_start_epoch             : 300                                 
+trainer.test_per_epoch               : 30                                  
+trainer.find_unused_parameters       : False                               
+trainer.sync_BN                      : apex                                
+trainer.dist_BN                      :                                     
+trainer.scaler                       : none                                
+trainer.data.batch_size              : 32                                  
+trainer.data.batch_size_per_gpu      : 32                                  
+trainer.data.batch_size_test         : 32                                  
+trainer.data.batch_size_per_gpu_test : 32                                  
+trainer.data.num_workers_per_gpu     : 4                                   
+trainer.data.drop_last               : True                                
+trainer.data.pin_memory              : True                                
+trainer.data.persistent_workers      : False                               
+trainer.data.num_workers             : 4                                   
+trainer.iter                         : 0                                   
+trainer.epoch                        : 0                                   
+trainer.iter_full                    : 33900                               
+trainer.metric_recorder              : {'mAUROC_sp_max_carpet': [], 'mAP_sp_max_carpet': [], 'mF1_max_sp_max_carpet': [], 'mAUPRO_px_carpet': [], 'mAUROC_px_carpet': [], 'mAP_px_carpet': [], 'mF1_max_px_carpet': [], 'mF1_px_0.2_0.8_0.1_carpet': [], 'mAcc_px_0.2_0.8_0.1_carpet': [], 'mIoU_px_0.2_0.8_0.1_carpet': [], 'mIoU_max_px_carpet': [], 'mAUROC_sp_max_grid': [], 'mAP_sp_max_grid': [], 'mF1_max_sp_max_grid': [], 'mAUPRO_px_grid': [], 'mAUROC_px_grid': [], 'mAP_px_grid': [], 'mF1_max_px_grid': [], 'mF1_px_0.2_0.8_0.1_grid': [], 'mAcc_px_0.2_0.8_0.1_grid': [], 'mIoU_px_0.2_0.8_0.1_grid': [], 'mIoU_max_px_grid': [], 'mAUROC_sp_max_leather': [], 'mAP_sp_max_leather': [], 'mF1_max_sp_max_leather': [], 'mAUPRO_px_leather': [], 'mAUROC_px_leather': [], 'mAP_px_leather': [], 'mF1_max_px_leather': [], 'mF1_px_0.2_0.8_0.1_leather': [], 'mAcc_px_0.2_0.8_0.1_leather': [], 'mIoU_px_0.2_0.8_0.1_leather': [], 'mIoU_max_px_leather': [], 'mAUROC_sp_max_tile': [], 'mAP_sp_max_tile': [], 'mF1_max_sp_max_tile': [], 'mAUPRO_px_tile': [], 'mAUROC_px_tile': [], 'mAP_px_tile': [], 'mF1_max_px_tile': [], 'mF1_px_0.2_0.8_0.1_tile': [], 'mAcc_px_0.2_0.8_0.1_tile': [], 'mIoU_px_0.2_0.8_0.1_tile': [], 'mIoU_max_px_tile': [], 'mAUROC_sp_max_wood': [], 'mAP_sp_max_wood': [], 'mF1_max_sp_max_wood': [], 'mAUPRO_px_wood': [], 'mAUROC_px_wood': [], 'mAP_px_wood': [], 'mF1_max_px_wood': [], 'mF1_px_0.2_0.8_0.1_wood': [], 'mAcc_px_0.2_0.8_0.1_wood': [], 'mIoU_px_0.2_0.8_0.1_wood': [], 'mIoU_max_px_wood': [], 'mAUROC_sp_max_bottle': [], 'mAP_sp_max_bottle': [], 'mF1_max_sp_max_bottle': [], 'mAUPRO_px_bottle': [], 'mAUROC_px_bottle': [], 'mAP_px_bottle': [], 'mF1_max_px_bottle': [], 'mF1_px_0.2_0.8_0.1_bottle': [], 'mAcc_px_0.2_0.8_0.1_bottle': [], 'mIoU_px_0.2_0.8_0.1_bottle': [], 'mIoU_max_px_bottle': [], 'mAUROC_sp_max_cable': [], 'mAP_sp_max_cable': [], 'mF1_max_sp_max_cable': [], 'mAUPRO_px_cable': [], 'mAUROC_px_cable': [], 'mAP_px_cable': [], 'mF1_max_px_cable': [], 'mF1_px_0.2_0.8_0.1_cable': [], 'mAcc_px_0.2_0.8_0.1_cable': [], 'mIoU_px_0.2_0.8_0.1_cable': [], 'mIoU_max_px_cable': [], 'mAUROC_sp_max_capsule': [], 'mAP_sp_max_capsule': [], 'mF1_max_sp_max_capsule': [], 'mAUPRO_px_capsule': [], 'mAUROC_px_capsule': [], 'mAP_px_capsule': [], 'mF1_max_px_capsule': [], 'mF1_px_0.2_0.8_0.1_capsule': [], 'mAcc_px_0.2_0.8_0.1_capsule': [], 'mIoU_px_0.2_0.8_0.1_capsule': [], 'mIoU_max_px_capsule': [], 'mAUROC_sp_max_hazelnut': [], 'mAP_sp_max_hazelnut': [], 'mF1_max_sp_max_hazelnut': [], 'mAUPRO_px_hazelnut': [], 'mAUROC_px_hazelnut': [], 'mAP_px_hazelnut': [], 'mF1_max_px_hazelnut': [], 'mF1_px_0.2_0.8_0.1_hazelnut': [], 'mAcc_px_0.2_0.8_0.1_hazelnut': [], 'mIoU_px_0.2_0.8_0.1_hazelnut': [], 'mIoU_max_px_hazelnut': [], 'mAUROC_sp_max_metal_nut': [], 'mAP_sp_max_metal_nut': [], 'mF1_max_sp_max_metal_nut': [], 'mAUPRO_px_metal_nut': [], 'mAUROC_px_metal_nut': [], 'mAP_px_metal_nut': [], 'mF1_max_px_metal_nut': [], 'mF1_px_0.2_0.8_0.1_metal_nut': [], 'mAcc_px_0.2_0.8_0.1_metal_nut': [], 'mIoU_px_0.2_0.8_0.1_metal_nut': [], 'mIoU_max_px_metal_nut': [], 'mAUROC_sp_max_pill': [], 'mAP_sp_max_pill': [], 'mF1_max_sp_max_pill': [], 'mAUPRO_px_pill': [], 'mAUROC_px_pill': [], 'mAP_px_pill': [], 'mF1_max_px_pill': [], 'mF1_px_0.2_0.8_0.1_pill': [], 'mAcc_px_0.2_0.8_0.1_pill': [], 'mIoU_px_0.2_0.8_0.1_pill': [], 'mIoU_max_px_pill': [], 'mAUROC_sp_max_screw': [], 'mAP_sp_max_screw': [], 'mF1_max_sp_max_screw': [], 'mAUPRO_px_screw': [], 'mAUROC_px_screw': [], 'mAP_px_screw': [], 'mF1_max_px_screw': [], 'mF1_px_0.2_0.8_0.1_screw': [], 'mAcc_px_0.2_0.8_0.1_screw': [], 'mIoU_px_0.2_0.8_0.1_screw': [], 'mIoU_max_px_screw': [], 'mAUROC_sp_max_toothbrush': [], 'mAP_sp_max_toothbrush': [], 'mF1_max_sp_max_toothbrush': [], 'mAUPRO_px_toothbrush': [], 'mAUROC_px_toothbrush': [], 'mAP_px_toothbrush': [], 'mF1_max_px_toothbrush': [], 'mF1_px_0.2_0.8_0.1_toothbrush': [], 'mAcc_px_0.2_0.8_0.1_toothbrush': [], 'mIoU_px_0.2_0.8_0.1_toothbrush': [], 'mIoU_max_px_toothbrush': [], 'mAUROC_sp_max_transistor': [], 'mAP_sp_max_transistor': [], 'mF1_max_sp_max_transistor': [], 'mAUPRO_px_transistor': [], 'mAUROC_px_transistor': [], 'mAP_px_transistor': [], 'mF1_max_px_transistor': [], 'mF1_px_0.2_0.8_0.1_transistor': [], 'mAcc_px_0.2_0.8_0.1_transistor': [], 'mIoU_px_0.2_0.8_0.1_transistor': [], 'mIoU_max_px_transistor': [], 'mAUROC_sp_max_zipper': [], 'mAUROC_sp_max_Avg': [], 'mAP_sp_max_zipper': [], 'mAP_sp_max_Avg': [], 'mF1_max_sp_max_zipper': [], 'mF1_max_sp_max_Avg': [], 'mAUPRO_px_zipper': [], 'mAUPRO_px_Avg': [], 'mAUROC_px_zipper': [], 'mAUROC_px_Avg': [], 'mAP_px_zipper': [], 'mAP_px_Avg': [], 'mF1_max_px_zipper': [], 'mF1_max_px_Avg': [], 'mF1_px_0.2_0.8_0.1_zipper': [], 'mF1_px_0.2_0.8_0.1_Avg': [], 'mAcc_px_0.2_0.8_0.1_zipper': [], 'mAcc_px_0.2_0.8_0.1_Avg': [], 'mIoU_px_0.2_0.8_0.1_zipper': [], 'mIoU_px_0.2_0.8_0.1_Avg': [], 'mIoU_max_px_zipper': [], 'mIoU_max_px_Avg': []}
+loss.loss_terms                      : [{'type': 'L2Loss', 'name': 'pixel', 'lam': 1.0}]
+loss.clip_grad                       : 5.0                                 
+loss.create_graph                    : False                               
+loss.retain_graph                    : False                               
+adv                                  : False                               
+logging.log_terms_train              : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'data_t', 'fmt': ':>5.3f'}, {'name': 'optim_t', 'fmt': ':>5.3f'}, {'name': 'lr', 'fmt': ':>7.6f'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.log_terms_test               : [{'name': 'batch_t', 'fmt': ':>5.3f', 'add_name': 'avg'}, {'name': 'pixel', 'suffixes': [''], 'fmt': ':>5.3f', 'add_name': 'avg'}]
+logging.train_reset_log_per          : 50                                  
+logging.train_log_per                : 50                                  
+logging.test_log_per                 : 50                                  
+data.sampler                         : naive                               
+data.loader_type                     : pil                                 
+data.loader_type_target              : pil_L                               
+data.type                            : DefaultAD                           
+data.root                            : data/mvtec                          
+data.meta                            : meta.json                           
+data.cls_names                       : []                                  
+data.train_transforms                : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.test_transforms                 : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}, {'type': 'Normalize', 'mean': (0.485, 0.456, 0.406), 'std': (0.229, 0.224, 0.225), 'inplace': True}]
+data.target_transforms               : [{'type': 'Resize', 'size': (256, 256), 'interpolation': <InterpolationMode.BILINEAR: 'bilinear'>}, {'type': 'CenterCrop', 'size': (256, 256)}, {'type': 'ToTensor'}]
+data.train_size                      : 113                                 
+data.test_size                       : 54                                  
+data.train_length                    : 3629                                
+data.test_length                     : 1725                                
+model_encoder.name                   : timm_wide_resnet50_2                
+model_encoder.kwargs                 : {'pretrained': True, 'checkpoint_path': '', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}
+model_fuser                          : {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}
+model_decoder                        : {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [2, 2, 2]}
+model_disor                          : {'sizes': [64, 32, 16], 'in_chas': [256, 512, 1024]}
+model.name                           : invad                               
+model.kwargs                         : {'pretrained': False, 'checkpoint_path': 'runs/InvADTrainer_configs_invad_invad_mvtec_20240920-230455/net.pth', 'strict': True, 'model_encoder': Namespace(name='timm_wide_resnet50_2', kwargs={'pretrained': True, 'checkpoint_path': '', 'strict': False, 'features_only': True, 'out_indices': [1, 2, 3]}), 'model_fuser': {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'in_strides': [4, 2, 1], 'down_conv': True, 'bottle_num': 1, 'conv_num': 1, 'lr_mul': 0.01}, 'model_decoder': {'in_chas': [256, 512, 1024], 'style_chas': [64, 64, 64], 'latent_spatial_size': 16, 'latent_channel_size': 16, 'blur_kernel': [1, 3, 3, 1], 'normalize_mode': 'LayerNorm', 'lr_mul': 0.01, 'small_generator': True, 'layers': [2, 2, 2]}}
+seed                                 : 42                                  
+size                                 : 256                                 
+warmup_epochs                        : 0                                   
+test_start_epoch                     : 300                                 
+test_per_epoch                       : 30                                  
+batch_train                          : 32                                  
+batch_test_per                       : 32                                  
+lr                                   : 0.004                               
+weight_decay                         : 0.0001                              
+uni_am                               : True                                
+use_cos                              : True                                
+cfg_path                             : configs.invad.invad_mvtec           
+mode                                 : test                                
+sleep                                : -1                                  
+memory                               : -1                                  
+dist_url                             : env://                              
+logger_rank                          : 0                                   
+opts                                 : ['vis=True', 'vis_dir=result']      
+command                              : python3 -m torch.distributed.launch --nproc_per_node=$nproc_per_node --nnodes=$nnodes --node_rank=$node_rank --master_addr=$master_addr --master_port=$master_port --use_env run.py -c configs.invad.invad_mvtec -m test --sleep -1 --memory -1 --dist_url env:// --logger_rank 0 vis=True vis_dir=result
+task_start_time                      : 1653920.482019725                   
+dist                                 : False                               
+world_size                           : 1                                   
+rank                                 : 0                                   
+local_rank                           : 0                                   
+ngpus_per_node                       : 1                                   
+nnodes                               : 1                                   
+master                               : True                                
+logdir                               : runs/InvADTrainer_configs_invad_invad_mvtec_20240921-160632
+logger.filters                       : []                                  
+logger.name                          : root                                
+logger.level                         : 20                                  
+logger.parent                        : None                                
+logger.propagate                     : True                                
+logger.disabled                      : False                               
+logdir_train                         : runs/InvADTrainer_configs_invad_invad_mvtec_20240921-160632/show_train
+logdir_test                          : runs/InvADTrainer_configs_invad_invad_mvtec_20240921-160632/show_test
+2024-09-21 16:06:36,297 - ==> Starting testing with 1 nodes x 1 GPUs
+2024-09-21 16:07:58,598 - Test: 92.59% [50/54] [batch_t 1.386 (1.644)] [pixel 2.501 (3.719)]
+2024-09-21 16:08:06,061 - Test: 100.00% [54/54] [batch_t 3.421 (1.660)] [pixel 1.853 (3.583)]
+2024-09-21 16:08:21,074 - ==> Metric Time for carpet         :   0.002 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.001 (mF1_max_sp_max)	  9.767 (mAUPRO_px)	  2.168 (mAUROC_px)	  1.540 (mAP_px)	  0.419 (mF1_max_px)	  0.115 (mF1_px_0.2_0.8_0.1)	  0.115 (mAcc_px_0.2_0.8_0.1)	  0.150 (mIoU_px_0.2_0.8_0.1)	  0.339 (mIoU_max_px)	
+2024-09-21 16:08:31,030 - ==> Metric Time for grid           :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  6.952 (mAUPRO_px)	  1.343 (mAUROC_px)	  0.993 (mAP_px)	  0.211 (mF1_max_px)	  0.073 (mF1_px_0.2_0.8_0.1)	  0.073 (mAcc_px_0.2_0.8_0.1)	  0.072 (mIoU_px_0.2_0.8_0.1)	  0.206 (mIoU_max_px)	
+2024-09-21 16:08:45,773 - ==> Metric Time for leather        :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  9.754 (mAUPRO_px)	  2.224 (mAUROC_px)	  1.634 (mAP_px)	  0.362 (mF1_max_px)	  0.121 (mF1_px_0.2_0.8_0.1)	  0.123 (mAcc_px_0.2_0.8_0.1)	  0.124 (mIoU_px_0.2_0.8_0.1)	  0.350 (mIoU_max_px)	
+2024-09-21 16:09:02,443 - ==> Metric Time for tile           :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	 11.879 (mAUPRO_px)	  2.084 (mAUROC_px)	  1.586 (mAP_px)	  0.363 (mF1_max_px)	  0.124 (mF1_px_0.2_0.8_0.1)	  0.120 (mAcc_px_0.2_0.8_0.1)	  0.122 (mIoU_px_0.2_0.8_0.1)	  0.347 (mIoU_max_px)	
+2024-09-21 16:09:13,374 - ==> Metric Time for wood           :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  7.934 (mAUPRO_px)	  1.326 (mAUROC_px)	  0.993 (mAP_px)	  0.217 (mF1_max_px)	  0.073 (mF1_px_0.2_0.8_0.1)	  0.072 (mAcc_px_0.2_0.8_0.1)	  0.073 (mIoU_px_0.2_0.8_0.1)	  0.210 (mIoU_max_px)	
+2024-09-21 16:09:24,571 - ==> Metric Time for bottle         :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.001 (mF1_max_sp_max)	  8.121 (mAUPRO_px)	  1.352 (mAUROC_px)	  1.004 (mAP_px)	  0.228 (mF1_max_px)	  0.077 (mF1_px_0.2_0.8_0.1)	  0.077 (mAcc_px_0.2_0.8_0.1)	  0.077 (mIoU_px_0.2_0.8_0.1)	  0.226 (mIoU_max_px)	
+2024-09-21 16:09:44,246 - ==> Metric Time for cable          :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	 13.433 (mAUPRO_px)	  2.728 (mAUROC_px)	  2.039 (mAP_px)	  0.461 (mF1_max_px)	  0.162 (mF1_px_0.2_0.8_0.1)	  0.164 (mAcc_px_0.2_0.8_0.1)	  0.165 (mIoU_px_0.2_0.8_0.1)	  0.464 (mIoU_max_px)	
+2024-09-21 16:10:00,358 - ==> Metric Time for capsule        :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.001 (mF1_max_sp_max)	 10.781 (mAUPRO_px)	  2.382 (mAUROC_px)	  1.723 (mAP_px)	  0.387 (mF1_max_px)	  0.135 (mF1_px_0.2_0.8_0.1)	  0.132 (mAcc_px_0.2_0.8_0.1)	  0.135 (mIoU_px_0.2_0.8_0.1)	  0.386 (mIoU_max_px)	
+2024-09-21 16:10:14,174 - ==> Metric Time for hazelnut       :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  9.407 (mAUPRO_px)	  1.927 (mAUROC_px)	  1.459 (mAP_px)	  0.317 (mF1_max_px)	  0.109 (mF1_px_0.2_0.8_0.1)	  0.108 (mAcc_px_0.2_0.8_0.1)	  0.116 (mIoU_px_0.2_0.8_0.1)	  0.324 (mIoU_max_px)	
+2024-09-21 16:10:31,722 - ==> Metric Time for metal_nut      :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	 12.941 (mAUPRO_px)	  2.020 (mAUROC_px)	  1.521 (mAP_px)	  0.331 (mF1_max_px)	  0.117 (mF1_px_0.2_0.8_0.1)	  0.120 (mAcc_px_0.2_0.8_0.1)	  0.115 (mIoU_px_0.2_0.8_0.1)	  0.333 (mIoU_max_px)	
+2024-09-21 16:10:54,133 - ==> Metric Time for pill           :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	 15.392 (mAUPRO_px)	  3.129 (mAUROC_px)	  2.264 (mAP_px)	  0.542 (mF1_max_px)	  0.172 (mF1_px_0.2_0.8_0.1)	  0.171 (mAcc_px_0.2_0.8_0.1)	  0.172 (mIoU_px_0.2_0.8_0.1)	  0.497 (mIoU_max_px)	
+2024-09-21 16:11:13,909 - ==> Metric Time for screw          :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	 12.969 (mAUPRO_px)	  2.937 (mAUROC_px)	  2.249 (mAP_px)	  0.510 (mF1_max_px)	  0.172 (mF1_px_0.2_0.8_0.1)	  0.162 (mAcc_px_0.2_0.8_0.1)	  0.206 (mIoU_px_0.2_0.8_0.1)	  0.508 (mIoU_max_px)	
+2024-09-21 16:11:18,817 - ==> Metric Time for toothbrush     :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  3.457 (mAUPRO_px)	  0.631 (mAUROC_px)	  0.473 (mAP_px)	  0.109 (mF1_max_px)	  0.037 (mF1_px_0.2_0.8_0.1)	  0.037 (mAcc_px_0.2_0.8_0.1)	  0.037 (mIoU_px_0.2_0.8_0.1)	  0.107 (mIoU_max_px)	
+2024-09-21 16:11:31,621 - ==> Metric Time for transistor     :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	  8.723 (mAUPRO_px)	  1.780 (mAUROC_px)	  1.354 (mAP_px)	  0.284 (mF1_max_px)	  0.099 (mF1_px_0.2_0.8_0.1)	  0.106 (mAcc_px_0.2_0.8_0.1)	  0.100 (mIoU_px_0.2_0.8_0.1)	  0.316 (mIoU_max_px)	
+2024-09-21 16:11:50,812 - ==> Metric Time for zipper         :   0.001 (mAUROC_sp_max)	  0.001 (mAP_sp_max)	  0.000 (mF1_max_sp_max)	 12.931 (mAUPRO_px)	  2.750 (mAUROC_px)	  2.095 (mAP_px)	  0.444 (mF1_max_px)	  0.157 (mF1_px_0.2_0.8_0.1)	  0.158 (mAcc_px_0.2_0.8_0.1)	  0.153 (mIoU_px_0.2_0.8_0.1)	  0.438 (mIoU_max_px)	
+2024-09-21 16:11:50,815 - 
+|    Name    |  mAUROC_sp_max  |  mAUROC_sp_max (Max)  |  mAP_sp_max  |  mAP_sp_max (Max)   |  mF1_max_sp_max  |  mF1_max_sp_max (Max)  |  mAUPRO_px  |  mAUPRO_px (Max)   |  mAUROC_px  |  mAUROC_px (Max)   |  mAP_px  |    mAP_px (Max)    |  mF1_max_px  |  mF1_max_px (Max)  |  mF1_px_0.2_0.8_0.1  |  mF1_px_0.2_0.8_0.1 (Max)  |  mAcc_px_0.2_0.8_0.1  |  mAcc_px_0.2_0.8_0.1 (Max)  |  mIoU_px_0.2_0.8_0.1  |  mIoU_px_0.2_0.8_0.1 (Max)  |  mIoU_max_px  |  mIoU_max_px (Max)  |
+|:----------:|:---------------:|:---------------------:|:------------:|:-------------------:|:----------------:|:----------------------:|:-----------:|:------------------:|:-----------:|:------------------:|:--------:|:------------------:|:------------:|:------------------:|:--------------------:|:--------------------------:|:---------------------:|:---------------------------:|:---------------------:|:---------------------------:|:-------------:|:-------------------:|
+|   carpet   |     98.435      |  98.435 (1   epoch)   |    99.543    | 99.543 (1   epoch)  |      96.629      |   96.629 (1   epoch)   |   95.088    | 95.088 (1   epoch) |   99.086    | 99.086 (1   epoch) |  61.818  | 61.818 (1   epoch) |    61.610    | 61.610 (1   epoch) |        41.996        |     41.996 (1   epoch)     |        56.384         |     56.384 (1   epoch)      |        28.016         |     28.016 (1   epoch)      |    44.519     | 44.519 (1   epoch)  |
+|    grid    |     99.916      |  99.916 (1   epoch)   |    99.970    | 99.970 (1   epoch)  |      99.130      |   99.130 (1   epoch)   |   96.874    | 96.874 (1   epoch) |   99.250    | 99.250 (1   epoch) |  46.703  | 46.703 (1   epoch) |    47.600    | 47.600 (1   epoch) |        33.290        |     33.290 (1   epoch)     |        44.313         |     44.313 (1   epoch)      |        20.674         |     20.674 (1   epoch)      |    31.234     | 31.234 (1   epoch)  |
+|  leather   |     100.000     |  100.000 (1   epoch)  |   100.000    | 100.000 (1   epoch) |     100.000      |  100.000 (1   epoch)   |   97.127    | 97.127 (1   epoch) |   99.345    | 99.345 (1   epoch) |  47.701  | 47.701 (1   epoch) |    48.006    | 48.006 (1   epoch) |        33.096        |     33.096 (1   epoch)     |        60.047         |     60.047 (1   epoch)      |        20.385         |     20.385 (1   epoch)      |    31.584     | 31.584 (1   epoch)  |
+|    tile    |     99.964      |  99.964 (1   epoch)   |    99.986    | 99.986 (1   epoch)  |      99.408      |   99.408 (1   epoch)   |   86.005    | 86.005 (1   epoch) |   95.270    | 95.270 (1   epoch) |  48.427  | 48.427 (1   epoch) |    60.360    | 60.360 (1   epoch) |        34.982        |     34.982 (1   epoch)     |        46.546         |     46.546 (1   epoch)      |        22.965         |     22.965 (1   epoch)      |    43.226     | 43.226 (1   epoch)  |
+|    wood    |     98.772      |  98.772 (1   epoch)   |    99.609    | 99.609 (1   epoch)  |      97.521      |   97.521 (1   epoch)   |   89.855    | 89.855 (1   epoch) |   94.933    | 94.933 (1   epoch) |  49.434  | 49.434 (1   epoch) |    48.996    | 48.996 (1   epoch) |        34.200        |     34.200 (1   epoch)     |        50.515         |     50.515 (1   epoch)      |        21.394         |     21.394 (1   epoch)      |    32.447     | 32.447 (1   epoch)  |
+|   bottle   |     100.000     |  100.000 (1   epoch)  |   100.000    | 100.000 (1   epoch) |     100.000      |  100.000 (1   epoch)   |   94.901    | 94.901 (1   epoch) |   98.529    | 98.529 (1   epoch) |  76.314  | 76.314 (1   epoch) |    73.271    | 73.271 (1   epoch) |        41.545        |     41.545 (1   epoch)     |        45.462         |     45.462 (1   epoch)      |        30.082         |     30.082 (1   epoch)      |    57.818     | 57.818 (1   epoch)  |
+|   cable    |     99.438      |  99.438 (1   epoch)   |    99.653    | 99.653 (1   epoch)  |      96.809      |   96.809 (1   epoch)   |   91.221    | 91.221 (1   epoch) |   97.417    | 97.417 (1   epoch) |  49.274  | 49.274 (1   epoch) |    53.032    | 53.032 (1   epoch) |        25.612        |     25.612 (1   epoch)     |        36.385         |     36.385 (1   epoch)      |        15.884         |     15.884 (1   epoch)      |    36.084     | 36.084 (1   epoch)  |
+|  capsule   |     98.285      |  98.285 (1   epoch)   |    99.631    | 99.631 (1   epoch)  |      97.273      |   97.273 (1   epoch)   |   95.046    | 95.046 (1   epoch) |   98.959    | 98.959 (1   epoch) |  47.209  | 47.209 (1   epoch) |    51.067    | 51.067 (1   epoch) |        26.187        |     26.187 (1   epoch)     |        28.273         |     28.273 (1   epoch)      |        16.299         |     16.299 (1   epoch)      |    34.288     | 34.288 (1   epoch)  |
+|  hazelnut  |     100.000     |  100.000 (1   epoch)  |   100.000    | 100.000 (1   epoch) |     100.000      |  100.000 (1   epoch)   |   96.532    | 96.532 (1   epoch) |   98.905    | 98.905 (1   epoch) |  59.312  | 59.312 (1   epoch) |    61.496    | 61.496 (1   epoch) |        37.006        |     37.006 (1   epoch)     |        60.546         |     60.546 (1   epoch)      |        24.298         |     24.298 (1   epoch)      |    44.401     | 44.401 (1   epoch)  |
+| metal_nut  |     99.902      |  99.902 (1   epoch)   |    99.977    | 99.977 (1   epoch)  |      99.465      |   99.465 (1   epoch)   |   92.906    | 92.906 (1   epoch) |   97.730    | 97.730 (1   epoch) |  81.506  | 81.506 (1   epoch) |    82.032    | 82.032 (1   epoch) |        48.396        |     48.396 (1   epoch)     |        54.687         |     54.687 (1   epoch)      |        36.387         |     36.387 (1   epoch)      |    69.537     | 69.537 (1   epoch)  |
+|    pill    |     98.636      |  98.636 (1   epoch)   |    99.763    | 99.763 (1   epoch)  |      97.842      |   97.842 (1   epoch)   |   96.113    | 96.113 (1   epoch) |   98.023    | 98.023 (1   epoch) |  70.627  | 70.627 (1   epoch) |    68.296    | 68.296 (1   epoch) |        37.383        |     37.383 (1   epoch)     |        45.697         |     45.697 (1   epoch)      |        25.647         |     25.647 (1   epoch)      |    51.855     | 51.855 (1   epoch)  |
+|   screw    |     97.397      |  97.397 (1   epoch)   |    99.075    | 99.075 (1   epoch)  |      95.935      |   95.935 (1   epoch)   |   97.593    | 97.593 (1   epoch) |   99.593    | 99.593 (1   epoch) |  49.276  | 49.276 (1   epoch) |    51.135    | 51.135 (1   epoch) |        28.009        |     28.009 (1   epoch)     |        52.419         |     52.419 (1   epoch)      |        17.370         |     17.370 (1   epoch)      |    34.350     | 34.350 (1   epoch)  |
+| toothbrush |     96.389      |  96.389 (1   epoch)   |    98.519    | 98.519 (1   epoch)  |      95.238      |   95.238 (1   epoch)   |   90.776    | 90.776 (1   epoch) |   99.030    | 99.030 (1   epoch) |  54.513  | 54.513 (1   epoch) |    60.406    | 60.406 (1   epoch) |        42.451        |     42.451 (1   epoch)     |        68.979         |     68.979 (1   epoch)      |        28.041         |     28.041 (1   epoch)      |    43.272     | 43.272 (1   epoch)  |
+| transistor |     99.500      |  99.500 (1   epoch)   |    99.233    | 99.233 (1   epoch)  |      97.561      |   97.561 (1   epoch)   |   93.447    | 93.447 (1   epoch) |   97.129    | 97.129 (1   epoch) |  68.775  | 68.775 (1   epoch) |    66.253    | 66.253 (1   epoch) |        37.428        |     37.428 (1   epoch)     |        35.820         |     35.820 (1   epoch)      |        25.259         |     25.259 (1   epoch)      |    49.536     | 49.536 (1   epoch)  |
+|   zipper   |     99.685      |  99.685 (1   epoch)   |    99.918    | 99.918 (1   epoch)  |      99.160      |   99.160 (1   epoch)   |   93.870    | 93.870 (1   epoch) |   98.462    | 98.462 (1   epoch) |  51.424  | 51.424 (1   epoch) |    58.590    | 58.590 (1   epoch) |        25.074        |     25.074 (1   epoch)     |        27.230         |     27.230 (1   epoch)      |        16.027         |     16.027 (1   epoch)      |    41.432     | 41.432 (1   epoch)  |
+|    Avg     |     99.088      |  99.088 (1   epoch)   |    99.659    | 99.659 (1   epoch)  |      98.131      |   98.131 (1   epoch)   |   93.824    | 93.824 (1   epoch) |   98.111    | 98.111 (1   epoch) |  57.488  | 57.488 (1   epoch) |    59.477    | 59.477 (1   epoch) |        35.110        |     35.110 (1   epoch)     |        47.554         |     47.554 (1   epoch)      |        23.249         |     23.249 (1   epoch)      |    43.039     | 43.039 (1   epoch)  |
